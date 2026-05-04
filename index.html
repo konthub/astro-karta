@@ -209,7 +209,7 @@
       letter-spacing:-.055em;
       max-width:100%;
     }
-    .final .body{
+    .final .body{<div class="cta-row">...</div>
       font-size:15px;
       line-height:1.55;
       max-width:100%;
@@ -235,6 +235,159 @@
     }
   }
 
+
+
+  /* ===== Премиум-блок: старт ближайшего потока ===== */
+  .flow-start{
+    position:relative;
+    margin:22px 0 0;
+    padding:20px 22px 20px 24px;
+    overflow:hidden;
+    border:1px solid rgba(23,20,18,.16);
+    background:rgba(255,250,243,.62);
+    box-shadow:0 18px 48px rgba(30,24,20,.08);
+    max-width:560px;
+    transition:.4s ease;
+  }
+  .flow-start:hover{
+    transform:translateY(-4px);
+    box-shadow:0 26px 64px rgba(30,24,20,.13);
+    background:rgba(255,250,243,.82);
+  }
+  .flow-start::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:var(--red);
+  }
+  .flow-start::after{
+    content:"";
+    position:absolute;
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    border:1px solid rgba(214,0,36,.28);
+    right:-58px;
+    top:50%;
+    transform:translateY(-50%);
+    pointer-events:none;
+  }
+  .flow-start-line{
+    position:absolute;
+    left:24px;
+    right:24px;
+    top:50%;
+    height:1px;
+    background:linear-gradient(90deg, rgba(214,0,36,.28), rgba(23,20,18,.08), transparent);
+    pointer-events:none;
+  }
+  .flow-start-dot{
+    position:absolute;
+    right:50px;
+    top:50%;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--red);
+    transform:translateY(-50%);
+    box-shadow:0 14px 34px rgba(214,0,36,.26);
+    pointer-events:none;
+  }
+  .flow-start-content{
+    position:relative;
+    z-index:2;
+    display:grid;
+    gap:10px;
+  }
+  .flow-start-title{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .flow-start-dates{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    max-width:430px;
+  }
+  .flow-date{
+    padding-top:12px;
+    border-top:1px solid rgba(23,20,18,.14);
+  }
+  .flow-date b{
+    display:block;
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:24px;
+    line-height:1;
+    font-weight:500;
+    letter-spacing:-.04em;
+    color:var(--red);
+    margin-bottom:6px;
+  }
+  .flow-date span{
+    display:block;
+    font-size:12px;
+    line-height:1.35;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#4b4640;
+  }
+  .final .flow-start{
+    margin-top:22px;
+    background:rgba(255,255,255,.08);
+    border-color:rgba(255,255,255,.24);
+    box-shadow:none;
+    backdrop-filter:blur(10px);
+  }
+  .final .flow-start:hover{
+    background:rgba(255,255,255,.12);
+  }
+  .final .flow-start::after{
+    border-color:rgba(255,255,255,.28);
+  }
+  .final .flow-start-line{
+    background:linear-gradient(90deg, rgba(255,255,255,.32), rgba(214,0,36,.32), transparent);
+  }
+  .final .flow-start-title{
+    color:rgba(255,255,255,.72);
+  }
+  .final .flow-date{
+    border-top-color:rgba(255,255,255,.22);
+  }
+  .final .flow-date b{
+    color:white;
+  }
+  .final .flow-date span{
+    color:rgba(255,255,255,.78);
+  }
+  @media (max-width:760px){
+    .flow-start{
+      margin-top:18px;
+      padding:18px 18px 18px 20px;
+      max-width:100%;
+    }
+    .flow-start-dates{
+      grid-template-columns:1fr;
+      gap:10px;
+      max-width:100%;
+    }
+    .flow-date b{
+      font-size:22px;
+    }
+    .flow-start::after{
+      width:120px;
+      height:120px;
+      right:-72px;
+    }
+    .flow-start-dot{
+      right:22px;
+      opacity:.72;
+    }
+  }
 </style>
 </head>
 <body>
@@ -250,6 +403,15 @@
         <p class="lead">10 встреч, чтобы почувствовать себя не только по натальной карте, но и в собственной жизни.</p>
         <p class="sublead">Программа самопознания, где астрология становится языком символов, а психология — способом понять, как эти символы живут в теле, отношениях, выборе и ежедневных реакциях.</p>
         <div class="cta-row"><a class="btn red" href="https://forms.yandex.ru/u/69f883a0f47e738cd0a05f13" target="_blank" rel="noopener noreferrer">Записаться</a><a class="btn" href="#program">Посмотреть 10 встреч</a></div>
+        <div class="flow-start reveal">
+          <div class="flow-start-line"></div><div class="flow-start-dot"></div>
+          <div class="flow-start-content">
+            <div class="flow-start-title">Старт ближайшего потока</div>
+            <div class="flow-start-dates">
+              <div class="flow-date"><b>12 мая</b><span>живая группа</span></div>
+              </div>
+          </div>
+        </div>
         <div class="stats">
           <div class="stat"><div class="num">10</div><div class="cap">живых встреч</div></div>
           <div class="stat"><div class="num">90</div><div class="cap">минут каждое занятие</div></div>
@@ -302,7 +464,7 @@
     <div class="bigword">10</div>
     <div class="section-head reveal"><div class="kicker">Программа</div><h2>10 недель. Один путь к себе.</h2></div>
     <div class="program-grid">
-      <div class="lesson reveal"><div class="lno">01</div><b>Как я живу свою энергию</b><span>Внутренний ритм, состояния и наблюдение за собой.</span></div>
+      <div class="lesson reveal"><div class="lno">01</div><b>Как я использую свою энергию</b><span>Внутренний ритм, состояния и наблюдение за собой.</span></div>
       <div class="lesson reveal"><div class="lno">02</div><b>Мои ресурсы и опоры</b><span>Что даёт безопасность, устойчивость и чувство «я стою на своём».</span></div>
       <div class="lesson reveal"><div class="lno">03</div><b>Как меня видят</b><span>Внешний образ, первое впечатление, социальная маска.</span></div>
       <div class="lesson reveal"><div class="lno">04</div><b>Слои личности</b><span>Роли, внутренние части и объёмное ощущение себя.</span></div>
@@ -326,8 +488,8 @@
       <div class="format-cell"><strong>15 000 ₽</strong><span>стоимость программы</span></div>
     </div>
     <div class="idea-grid" style="margin-top:18px">
-      <div class="card reveal"><p class="text-xl">Офлайн-группа</p><p class="body">Живые встречи по четвергам вечером. Камерная группа до 6 человек.</p></div>
-      <div class="card reveal"><p class="text-xl">Онлайн-группа</p><p class="body">Онлайн-встречи по вторникам. Тот же путь, структура и глубина работы.</p></div>
+      <div class="card reveal"><p class="text-xl">Офлайн-группа</p><p class="body">Живые встречи по вторникам вечером. Камерная группа до 6 человек.</p></div>
+      <div class="card reveal"><p class="text-xl">Онлайн-группа</p><p class="body">Онлайн-встречи (идет набор). Тот же путь, структура и глубина работы.</p></div>
     </div>
   </section>
 
@@ -352,6 +514,15 @@
         <h2>Это не программа о том, чтобы стать другой.</h2>
         <p class="body">Это программа о том, чтобы перестать от себя убегать, начать себя понимать и, возможно, впервые почувствовать — какая вы на самом деле.</p>
         <div class="cta-row" style="margin-top:22px"><a class="btn red" href="https://forms.yandex.ru/u/69f883a0f47e738cd0a05f13" target="_blank" rel="noopener">Записаться на программу</a></div>
+        <div class="flow-start reveal">
+          <div class="flow-start-line"></div><div class="flow-start-dot"></div>
+          <div class="flow-start-content">
+            <div class="flow-start-title">Старт ближайшего потока</div>
+            <div class="flow-start-dates">
+              <div class="flow-date"><b>12 мая</b><span>живая группа</span></div>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
