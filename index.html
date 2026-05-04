@@ -369,5 +369,77 @@
     words.forEach((w,i)=>{ w.style.transform = `translateX(-50%) translateY(${(y*0.015)*(i%2?1:-1)}px)`; });
   }, {passive:true});
 </script>
+<!-- FAQ BLOCK -->
+<section style="max-width: 900px; margin: 60px auto; padding: 0 20px;">
+  <h2 style="text-align:center; margin-bottom:30px;">Часто задаваемые вопросы</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Можно ли оплатить в рассрочку?</div>
+    <div class="faq-answer">Да, мы предоставляем возможность оплаты в рассрочку. Подробности уточняются после регистрации.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Будут ли записи занятий?</div>
+    <div class="faq-answer">Занятия идут в живом формате без записи</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Будем ли мы работать со своей картой рождения?</div>
+    <div class="faq-answer">Да, в процессе занятий вы будете работать со своей натальной картой и разбирать её.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Нужны ли специальные знания в астрологии?</div>
+    <div class="faq-answer">Нет, программа подходит даже для новичков. Всё объясняется простым и понятным языком.</div>
+  </div>
+</section>
+
+<style>
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-weight: 600;
+  position: relative;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+}
+
+.faq-item.active .faq-question::after {
+  content: "-";
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  margin-top: 10px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  opacity: 1;
+}
+</style>
+
+<script>
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+</script>
+<div style="text-align:center; margin:40px 0 20px; font-size:12px; color:#999; letter-spacing:0.5px;">
+  ИП Билат М.Г. • ОГРН 316645100103443 • ИНН 645117522391
+</div>
 </body>
 </html>
